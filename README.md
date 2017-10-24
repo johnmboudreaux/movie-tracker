@@ -22,7 +22,7 @@ This project is working off the The Movie DB API (https://www.themoviedb.org/doc
 
   Contributors:
   
-  John Michael
+  John Michael Boudreaux
   
   Ben Porter
   
