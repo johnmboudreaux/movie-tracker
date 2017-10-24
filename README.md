@@ -8,6 +8,7 @@ This project is working off the The Movie DB API (https://www.themoviedb.org/doc
 
 
   We assembled Movie Tracker with the following languages:
+  
   Javascript
   React
   Redux
@@ -15,13 +16,16 @@ This project is working off the The Movie DB API (https://www.themoviedb.org/doc
   CSS3
   Sass
 
-  PostGresql was used for a backend in MT.
+  PostGresql was used for a backend.
 
 ------------------------------------------------------------------------------
 
   Contributors:
+  
   John Michael
+  
   Ben Porter
+  
   Alex Banister
 
 -------------------------------------------------------------------------------
