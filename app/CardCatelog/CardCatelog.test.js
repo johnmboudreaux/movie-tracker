@@ -1,5 +1,5 @@
 import configureStore from 'redux-mock-store';
-import {shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import CardCatelog from './CardCatelog';
 import * as actions from './CardCatelogActions';
 import * as reducers from './CardCatelogReducer';
@@ -86,6 +86,7 @@ describe('CardCatalog Actions', () => {
 });
 
 describe('CardCatalog Reducers', () => {
+  
   it('recentMovies should set default state', () => {
     const expectation = [];
 

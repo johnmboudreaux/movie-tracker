@@ -17,13 +17,16 @@ import {
 } from '../API/User';
 
 class CardCatelog extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     const user = JSON.parse(localStorage.getItem('movieTrackerUser'));
     if (user){
       this.props.loginAction(user);
     }
-    const recentMovies = await fetchRecentMovies();
-    this.props.addRecentMovies(recentMovies);
+    let fetcher = async () => {
+      const recentMovies = await fetchRecentMovies();
+      this.props.addRecentMovies(recentMovies);
+    };
+    fetcher();
     if (this.props.user.id) {
       this.getUserFavorites();
     }
@@ -120,21 +123,17 @@ CardCatelog.propTypes = {
   loginAction: PropTypes.func
 };
 
-const mapStateToProps =  (store) => ({
+const mapStateToProps = (store) => ({
   recentMovies: store.recentMovies,
   favoriteMovies: store.favoriteMovies,
   user: store.user
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addRecentMovies: ( recentMovies ) => {
-    dispatch(addRecentMovies(recentMovies));
-  },
+  addRecentMovies: ( recentMovies ) => { dispatch(addRecentMovies(recentMovies)); },
   getFavorites: (favoriteMovies) => { dispatch(getFavorites(favoriteMovies)); },
   addFavorite: (favMov) => { dispatch(addFavorite(favMov)); },
-  removeFavorites: (favoriteMovies) => {
-    dispatch(removeFavorites(favoriteMovies));
-  },
+  removeFavorites: (favoriteMovies) => { dispatch(removeFavorites(favoriteMovies)); },
   loginAction: ( user ) => { dispatch(LoginAction(user)); }
 });
 
